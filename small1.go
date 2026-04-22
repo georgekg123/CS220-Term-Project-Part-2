@@ -2,22 +2,28 @@
 Names: Finn Norsen, George Gordon, and Will Bentley
 Assignment: Term Project Checkpoint 2
 File Name: small1.go
-Program: Utilizes a struct to compare sports player data
+Program: Utilizes a struct to compare sports player data!
 */
 
 package main
 
+// Imports fmt, which is used for printing:
 import (
 	"fmt"
 )
 
+// Sets up our struct, which is a data type in Go that can groups different types into a single structure.
 type PlayerInfo struct {
+	// Types are declared along with names; any type can be accepted (int, string, bool, etc.).
 	name, club string
 	goals int
 	app bool
 }
 
+// PlayerComparison prompts the user to enter info about two players, then lets them compare them, having entered the data into the struct.
 func PlayerComparison() {
+
+	// Takes user input using Print and Scan. No spaces are allowed for individual input!
 	var name1 string
 	fmt.Print("Name your first player (last name only): ")
 	fmt.Scan(&name1)
@@ -44,13 +50,16 @@ func PlayerComparison() {
 	fmt.Print("Have they made an appearance (true/false)? ")
 	fmt.Scan(&app2)
 
+	// Enters the gathered info into entries of the PlayerInfo struct:
 	var player1 = PlayerInfo{name1, club1, goals1, app1}
 	var player2 = PlayerInfo{name2, club2, goals2, app2}
 
+	// Takes user input to decide what to compare:
 	var i string
 	fmt.Print("What would you like to compare (goals, app) ")
 	fmt.Scan(&i)
 
+	// Utilizes simple conditionals concatenation to output the correct statistical comparisons:
 	if i == "goals" {
 		if player1.goals < player2.goals {
 			fmt.Println(player2.name + " has scored more goals than " + player1.name + "!")
@@ -72,7 +81,7 @@ func PlayerComparison() {
 	}
 }
 
-
+// The main function controls the flow of the program; in this case, it calls the PlayerComparison function:
 func main() {
 	PlayerComparison()
 }
