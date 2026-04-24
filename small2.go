@@ -1,3 +1,11 @@
+/*
+Names: Finn Norsen, George Gordon, and Will Bentley
+Assignment: Term Project Checkpoint 2
+File Name: small2.go
+Program: Utilizes inbuilts to demonstrate the go-specific slice datastructure, 
+as well as showcases loop structure.
+*/
+
 package main
 import ("fmt"
 		"slices"
@@ -12,6 +20,8 @@ for i, j :=0, len(my_slice) -1; i < j; i, j = i + 1, j - 1 {
 
 }
 
+
+// Main operating hub of the program from which other outer functions are called.
 func main() {
 	// Declare the array to be sliced from and the first slice
 	my_array := [7]string{"I", "am", "a", "slice", "in", "an", "array"}
@@ -27,10 +37,9 @@ func main() {
 	middle_slice := my_array[2:4]
 	fmt.Println("The slice of the array starting at zero contains:", middle_slice, "and has a capacity of", cap(middle_slice), "with an occupied length of", len(middle_slice))
 
+	// Slices also have many inbuilts, which make some code non necessary, like this reversing function I just wrote:
 	slices.Reverse(middle_slice)
 	fmt.Println("Slice reversed via inbuilt function:", middle_slice)
-
-	// Slices also have many inbuilts, which make some code non necessary, like this reversing function I just wrote:
 	reverse_slice(middle_slice)
 	fmt.Println("Re-reversed slice using looped statement:", middle_slice)
 	
@@ -38,5 +47,7 @@ func main() {
 	fmt.Println("Before reversal:", my_array, "\n")
 	reverse_slice(start_slice)
 	fmt.Println("After reversal:", my_array, "\n")
+
+	
 
 }
