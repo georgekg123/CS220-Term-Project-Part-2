@@ -14,9 +14,9 @@ import ("fmt"
 
 func reverse_slice(my_slice []string) {
 
-for i, j :=0, len(my_slice) -1; i < j; i, j = i + 1, j - 1 {
-	my_slice[i], my_slice[j] = my_slice[j], my_slice[i]
-}
+	for i, j :=0, len(my_slice) -1; i < j; i, j = i + 1, j - 1 {
+		my_slice[i], my_slice[j] = my_slice[j], my_slice[i]
+	}
 
 }
 
@@ -47,7 +47,5 @@ func main() {
 	fmt.Println("Before reversal:", my_array, "\n")
 	reverse_slice(start_slice)
 	fmt.Println("After reversal:", my_array, "\n")
-
-	
 
 }
